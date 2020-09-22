@@ -15,19 +15,32 @@
 # sys.path.insert(0, os.path.abspath('.'))
 
 
+import os
+import sys
+from datetime import date
+
+file_loc = os.path.split(__file__)[0]
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(file_loc), '.')))
+
+import excursion
+
+
 # -- Project information -----------------------------------------------------
 
-project = 'Excursion'
+project = excursion.__about__.__project__
 copyright = '2020, Lukas Heinrich, Irina Espejo, Giles Louppe, Kyle Cranmer'
-author = 'Lukas Heinrich, Irina Espejo, Giles Louppe, Kyle Cranmer'
+author = 'Lukas Heinrich, Irina Espejo, Giles Louppe, Kyle Cranmer'.__about__.__author__
 
-
+# The short X.Y version
+version = excursion.__about__.__version__
+# The full version, including alpha/beta/rc tags
+release = version
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = [
+extensions = ['sphinx.ext.napoleon',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -44,7 +57,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+html_theme = 'classic'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

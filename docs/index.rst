@@ -5,6 +5,12 @@
 
 Welcome to Excursion's documentation!
 =====================================
+Release v\ |version|
+
+.. toctree::
+   :maxdepth: 2
+
+   excursion
 
 .. toctree::
    :maxdepth: 2
