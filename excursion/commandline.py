@@ -55,7 +55,6 @@ def main():
     # start_time = time.time()  #######
 
     model, likelihood = init_gp(testcase, algorithmopts, algorithmopts["ninit"], device)
-
     # time1 = time.time()  ####
     # print("--- init_gp %s seconds ---" % (time1 - start_time))  ###
 

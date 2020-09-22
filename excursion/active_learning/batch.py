@@ -3,15 +3,17 @@ import gpytorch
 import numpy as np
 
 
-def get_first_max_index(gp, ordered_indexs, testcase):
+def get_first_max_index(gp, acq_values_of_grid, testcase):
     X_train = gp.train_inputs[0]
+    accept = False
 
-    for i in ordered_indexs:
-        if testcase.X.tolist()[i] not in X_train.tolist():
-            new_first = i
-            break
-
-    return new_first
+    while (not accept):
+        new_first = torch.amax(acq_values_of_grid)
+        if (testcase.X[new_first] not in X_train):
+            accept = True
+            return new_first
+        else:
+            acq_values_of_grid[new_first] = None
 
 
 def get_naive_batch(gp, ordered_indexs, testcase, batchsize, self, **kwargs):

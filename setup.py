@@ -22,6 +22,7 @@ extras_require = {
 }
 extras_require["complete"] = sorted(set(sum(extras_require.values(), [])))
 
+
 setup(
     name="excursion",
     version="0.0.1",

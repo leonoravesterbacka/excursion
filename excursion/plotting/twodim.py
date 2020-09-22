@@ -183,5 +183,4 @@ def plot_GP(ax, gp, testcase, device, dtype, batchsize=1):
     return ax
 
 
-def my_func(x):
-    return
+
