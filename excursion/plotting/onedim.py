@@ -268,7 +268,8 @@ def plot_GP(gp, testcase, **kwargs):
         ax1.legend(loc="lower right")
 
         plt.subplots_adjust(hspace=0.0)
-        # plt.show()
+    plt.savefig('plots/GP.png')    
+    # plt.show()
 
 
 def plot_GP_dual(gp1, gp2, testcase, **kwargs):
